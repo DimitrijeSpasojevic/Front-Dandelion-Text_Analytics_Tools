@@ -14,3 +14,16 @@ export interface Annotation {
 export interface Image {
   full: string,
 }
+
+export interface SimilarityResponse {
+  similarity: number
+}
+
+export interface LanguageDetectionResponse {
+  detectedLangs: Language[]
+}
+
+export interface Language {
+  lang: string,
+  confidence: number,
+}
