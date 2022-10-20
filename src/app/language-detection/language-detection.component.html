@@ -1,0 +1,29 @@
+<div>
+  <h3>Language Detection</h3>
+
+  <div>
+    <form (submit)="detectLanguage()" class="mb-5">
+      <div class="form-group mb-2">
+        <label for="text">Text</label>
+        <input type="text" class="form-control" id="text" name="text" placeholder="Some text..." [(ngModel)]="text">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div class="form-check">
+      <input [(ngModel)]="cleanEnabled" class="form-check-input" type="checkbox" value="" id="cleanEnabledCheckbox">
+      <label class="form-check-label" for="cleanEnabledCheckbox">
+        Clean
+      </label>
+    </div>
+
+    <h3>Detected languages</h3>
+    <div *ngFor="let lang of languages; let i = index;" class="mb-2">
+      <p>Language:</p>
+      <p>{{ lang.lang }}</p>
+      <p>Confidence:</p>
+      <p>{{ lang.confidence }}</p>
+    </div>
+
+  </div>
+</div>

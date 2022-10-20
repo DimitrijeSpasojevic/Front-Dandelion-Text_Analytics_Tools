@@ -1,0 +1,38 @@
+<div>
+  <h3>Sentiment analysis</h3>
+
+  <div>
+    <form (submit)="doSentimentAnalysis()" class="mb-5">
+      <div class="form-group mb-2">
+        <label for="text">Text</label>
+        <input type="text" class="form-control" id="text" name="text" placeholder="Some text..." [(ngModel)]="text">
+      </div>
+
+      <div class="form-check">
+        <input [(ngModel)]="language" class="form-check-input" type="radio" name="language" id="languageEn" value="en">
+        <label class="form-check-label" for="languageEn">
+          English
+        </label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="language" class="form-check-input" type="radio" name="language" id="languageIt" value="it">
+        <label class="form-check-label" for="languageIt">
+          Italian
+        </label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="language" class="form-check-input" type="radio" name="language" id="languageAuto" value="auto">
+        <label class="form-check-label" for="languageAuto">
+          Auto
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <h3>Sentiment level: </h3>
+      <p>{{ sentimentLevel }}</p>
+    <h3>Sentiment type: </h3>
+      <h1 [style.color]="'rgb(' + color + ')'">{{ sentimentType }}</h1>
+  </div>
+</div>
