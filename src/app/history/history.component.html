@@ -1,0 +1,4 @@
+<h3>History</h3>
+<div *ngFor="let req of reqStructs; let i = index;" class="mb-2">
+  <p>[{{ req.date | date:'medium' }}  ] {{ req.method }} {{ req.url }}</p>
+</div>
